@@ -7,7 +7,7 @@ pipeline {
             } 
             steps { 
                 withSonarQubeEnv('sonarqube') { 
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=FinancialSpreading -Dsonar.sources=. -Dsonar.java.binaries=. " 
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=jacocodemo -Dsonar.sources=. -Dsonar.java.binaries=. " 
                 } 
                 timeout(time: 10, unit: 'MINUTES') { 
                     waitForQualityGate abortPipeline: true 
